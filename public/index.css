@@ -1,0 +1,327 @@
+body{
+    scroll-padding: 2rem;
+    scroll-behavior: smooth;
+    --tw-bg-opacity: 1;
+    background-color: #10151D;
+    background-image: radial-gradient(circle at 5px 5px, rgba(233, 220, 220, 0.137) 1px, transparent 3px); /* Define the dot pattern */
+    background-size: 90px 100px; /* Adjust the size of each dot */
+    --tw-text-opacity: 1;
+    color: rgb(128 140 156 / var(--tw-text-opacity));
+    font-family: 'Courier Prime', monospace;
+
+}
+
+.corelogo img{
+    width: 50%;
+    height: auto;
+    margin: 100px 0px -100px 40%;
+    animation: rotate 10s linear infinite; /* Adjust the animation duration and timing function as needed */
+    transform-origin: center;
+    filter: drop-shadow(0 0 15px  rgba(164, 164, 165, 0.445));
+
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+@media screen and (max-width: 768px) {
+ 
+    .corelogo img{
+        justify-content: center;
+        width: 70%;
+        height: auto;
+        margin: 20% 0px 0px 20%;
+    }
+}
+
+.topglow{
+    width: 50%;
+    height: 10px;
+    margin: -20px 50px 50px 320px;
+    animation: topglowing 2s infinite alternate;
+
+}
+
+@keyframes topglowing {
+    0% {
+        box-shadow: 0 0 60px rgba(102, 84, 167, 0.356);
+    }
+    100% {
+        box-shadow: 0 0 60px #b1afef;
+    }
+}
+.sidebar {
+    width: 70px; /* Adjust the width as needed */
+    height: 100%;
+    background-color: #161E29; /* Background color of the sidebar */
+    border-right: 1px solid rgba(126, 125, 124, 0.452);
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow-y: auto; /* Enable scrolling if content exceeds the height */
+    animation: glowing 2s infinite alternate;
+}
+
+.title{
+    display: block;
+    margin-left: 100px;
+    position: absolute;
+}
+@media screen and (max-width: 768px) {
+    .sidebar {
+        display: none; /* Adjust the width for smaller screens */
+    }
+       
+    .title{
+        display: block;
+        position: relative;
+        margin-left: 40px;
+    }
+
+    .topglow{
+        margin: -20px 50px 0px 100px;
+    }
+}
+
+
+
+/* Keyframes for the glowing effect */
+@keyframes glowing {
+    0% {
+        box-shadow: 0 0 1px rgba(102, 84, 167, 0.356);
+    }
+    100% {
+        box-shadow: 0 0 2px rgba(97, 105, 153, 0.7);
+    }
+}
+
+.logo-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow flex items to wrap to the next line */
+    width: 100%;
+
+  }
+
+  .column {
+    flex: 1;
+    padding: 0px;
+  }
+
+  
+
+  @media (max-width: 600px) {
+    /* Media query for screens with a maximum width of 600px (typical mobile devices) */
+    .logo-container {
+      flex-direction: column; /* Change to a vertical layout */
+    }
+
+    .column {
+      width: 100%; /* Make each column take up the full width */
+    }
+  }
+
+/* Style for the logo section */
+.logo {
+    padding: 20px; /* Adjust the padding as needed */
+    text-align: center;
+}
+
+/* Style for the sidebar content */
+#sidebar-content {
+    padding: 20px; /* Adjust the padding as needed */
+}
+
+/* Style for links in the sidebar content (optional) */
+#sidebar-content a {
+    color: #fff; /* Link text color */
+    text-decoration: none;
+    display: block;
+    padding: 10px 0;
+}
+
+/* Hover effect for links in the sidebar content (optional) */
+#sidebar-content a:hover {
+    background-color: #555; /* Background color on hover */
+}
+
+/* Add the following CSS to your stylesheet */
+
+/* Style for the glowing effect on hover */
+.glow-on-hover {
+    transition: transform 0.2s, box-shadow 0.3s;
+    border-radius: 25px; /* Adjust the border-radius as needed */
+    background-color: rgba(197, 199, 231, 0); /* Change the background color */
+    border: 1px solid #ffffff48; /* Add a border */
+    padding: 9px 18px; /* Increase padding to increase button size */
+    margin-right: 10px;
+    color: #fff;
+    font-size: 15px;
+
+
+}
+
+.glow-on-hover:hover {
+    transform: scale(1.05); /* Increase the size slightly on hover */
+    box-shadow: 0 0 10px rgba(188, 188, 236, 0.61); /* Change the box-shadow to create a glow effect */
+    border: 1px solid #38d3cb5b; /* Add a border */
+
+
+}
+
+/* Style for the "Join Waitlist" button */
+.button-primary {
+    border-radius: 25px; /* Adjust the border-radius as needed */
+    background-color: #007BFF; /* Change the background color */
+    color: #fff; /* Change the text color to white */
+    transition: background-color 0.5s;
+    border: 2px solid #007BFF; /* Add a border */
+    padding: 10px 20px; /* Increase padding to increase button size */
+    margin-right: 20px; /* Add margin to push it to the right */
+}
+
+.button-primary:hover {
+    background-color: #fff; /* Change the background color to white on hover */
+    color: #007BFF; /* Change the text color back to blue on hover */
+    border-color: #fff; /* Change the border color to white on hover */
+}
+
+.container {
+    float: right;
+    margin-right: 20px;
+    /* Remove position: relative; */
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        float: none;
+        text-align: center;
+        margin-right: -40px;
+    }
+}
+
+.introduction {
+    text-align: center;
+    /* Remove position: relative; */
+}
+
+.about{
+    text-align: left;
+    margin-top: 10px;
+    padding: 100px;
+    font-size: 20px;
+}
+@media screen and (max-width: 768px) {
+    .about{
+        padding: 20px;
+    }
+}
+
+.feature-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: left;
+    margin-bottom: 10px;
+
+}
+
+.box{
+    display: flex;
+    flex-direction: row;
+    width: 83%;
+    margin:-40px 40px 50px 14%;
+}
+
+.imgcard{
+    width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+    .box {
+        flex-direction: column; /* Vertical direction for smaller screens */
+        width: 100%;
+        margin: 40px 0px 40px -20px ;
+    }
+}
+.feature-card {
+    padding: 20px;
+    background-color: transparent;
+    text-align: left;
+    width: 80%;
+}
+
+.sideimg img{
+    width: 70%;
+    height: auto;
+    margin-top: 40px;
+}
+
+.sideimg{
+    height: 367px;
+}
+
+
+/* Style the feature icon */
+.feature-icon {
+    width: 36px;
+    height: 36px;
+    margin-bottom: 20px;
+}
+
+/* Style the feature title */
+.feature-title {
+    font-size: 26px;
+    line-height: 29px;
+    margin-bottom: 10px;
+}
+
+/* Style the feature description */
+.feature-description {
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+/* Style the feature button */
+.feature-button {
+    padding: 10px 20px;
+    background-color: #5e2beb;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Add hover effect to the button */
+.feature-button:hover {
+    background-color: #4c1a9b;
+}
+
+.footer{
+    text-align: left;
+    margin-top: -200px;
+    padding: 210px;
+    font-size: 20px;
+}
+@media screen and (max-width: 768px) {
+    .footer{
+        padding: 20px;
+        margin-top: 30px;
+    }
+
+    .sideimg img{
+        width: 100%;
+        height: auto;
+        margin-top: 40px;
+    }
+    
+    .sideimg{
+        height: 220px;
+    }
+}

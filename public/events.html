@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="generator" content="Astro v2.9.6">
+    <link rel="icon" href="core.png" type="image/icon type">
+    <link href="index.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap" rel="stylesheet">
+
+
+    <title>Neurites</title>
+    <style>
+         @media (max-width: 600px) {
+        .button {
+            padding: 8px 12px; /* Adjust the button padding for smaller screens */
+            font-size: 12px; /* Adjust the button font size for smaller screens */
+        }
+    }
+
+    .team{
+      margin: 15% 10% 0 10%;
+    }
+
+
+    .membercard {
+      display: flex;
+      justify-content: space-around;
+      padding: 20px;
+      flex-wrap: wrap;
+
+    }
+
+    .cardbody {
+      width: 300px;
+      height: 270px;
+      background-color: #1e2531ee; /* Set a background color for the boxes */
+      border-radius: 8px;
+      margin-top: 20px;
+
+    }
+
+    img{
+      width: 300px;
+      border-radius: 8px 8px 0 0;
+      height: 170px;
+      object-fit: cover; /* Maintain aspect ratio and cover the container */
+
+
+
+    }
+
+    .eventholder {
+      width: 300px;
+      height: 170px;
+      border-radius: 8px 8px 0 0;
+      background-color: #dbdde0f8; /* Set a background color for the boxes */
+
+    }
+
+    @media (max-width: 600px) {
+      /* Media query for screens with a maximum width of 600px (typical mobile devices) */
+      .membercard {
+        flex-direction: column; /* Change to a vertical layout */
+        align-items: center; /* Center items along the cross-axis */
+      }
+    }
+
+    h2,h3, h1,h4{
+        text-align: center;
+    }
+
+
+
+
+  </style>
+	</head>
+
+    <body>
+        <div class="topglow"></div>
+        <div class="sidebar">
+            <div class="logo">
+                <img src="core.png" class="feature-icon" alt="abstract icon depicting code lines">
+            </div>
+            <nav id="sidebar-content">
+                <!-- Your sidebar content goes here -->
+            </nav>
+        </div> 
+        <div class="title">
+            <h3>Neurites</h3>
+        </div>
+
+        <div class="container" >
+            <!-- Features -->
+            <a href="index.html"><button class="button button-outline w-full xs:w-auto glow-on-hover">
+                Explore CORE
+            </button></a>
+
+            <a href="team.html"><button class="button button-outline w-full xs:w-auto glow-on-hover">
+                Team
+            </button></a>
+
+            <a href="events.html"><button class="button button-outline w-full xs:w-auto glow-on-hover">
+                Events
+            </button></a>
+        
+        
+            <!-- Waitlist -->
+            <a href="register.html"><button class="button button-primary xs:has-arrow w-full xs:w-auto">
+                Join US
+            </button></a>
+
+            
+        </div>
+
+        <div class="team">
+          <h1>Events Happening</h1>
+          <div id="eventsContainer" class="membercard"></div>
+        </div>
+        
+        
+        <script>
+          document.addEventListener('DOMContentLoaded', async () => {
+            try {
+              const response = await fetch('http://localhost:3000/upcomingevs');
+              if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+              }
+              const eventData = await response.json();
+        
+              // Get the events container
+              const eventsContainer = document.getElementById('eventsContainer');
+        
+              // Loop through each event and create HTML elements
+              eventData.forEach(event => {
+                // Create a card for each event
+                const card = document.createElement('div');
+                card.classList.add('cardbody');
+        
+                const eventholder = document.createElement('div');
+                eventholder.classList.add('eventholder');
+        
+                const img = document.createElement('img');
+                img.src = event.image;
+                img.classList.add('profile-image');
+        
+                const eventName = document.createElement('h2');
+                eventName.textContent = event.eventName;
+        
+                const eventDate = document.createElement('h4');
+                eventDate.textContent = event.date;
+        
+                eventholder.appendChild(img);
+                card.appendChild(eventholder);
+                card.appendChild(eventName);
+                card.appendChild(eventDate);
+        
+                // Append the card to the events container
+                eventsContainer.appendChild(card);
+              });
+            } catch (error) {
+              console.error('Error fetching event data:', error);
+            }
+          });
+        </script>
+        
+        
+    </body>
+</html>

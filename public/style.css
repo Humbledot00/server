@@ -1,0 +1,140 @@
+
+model-viewer{
+width:90%;
+height:600px;
+background-color:transparent;
+margin-left: 100px;
+margin-top: -250px;
+}
+
+@media screen and (max-width: 768px) {
+    model-viewer{
+        margin-top: 0px;
+        margin-left: 0px;
+        height:300px;
+        width:100%;
+    }
+}
+
+.event{
+    justify-content: center;
+    margin-bottom: 5%;
+    display: none;
+}
+
+.event-container {
+    display: flex;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    width: 70%;
+  }
+
+  .event-image {
+    flex: 1;
+
+  }
+
+  .event-content {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #fff;
+    border-radius: 0 10px 10px 0;
+  }
+
+  .button-container {
+    display: flex;
+    gap: 10px;
+  }
+
+  .eventButton {
+    padding: 10px 15px;
+    background-color: #5e2beb;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .eventButton:hover {
+    background-color: #4c1a9b;
+}
+
+  /* Media Query for smaller screens */
+  @media (max-width: 768px) {
+    .event-container {
+      flex-direction: column-reverse;
+    }
+
+    .event-image {
+      order: 2;
+      border-radius: 10px 10px 0 0;
+    }
+
+    .event-content {
+      order: 1;
+      border-radius: 0 0 10px 10px;
+    }
+  }
+
+
+  
+  .overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 500ms;
+    visibility: hidden;
+    opacity: 0;
+  }
+  .overlay:target {
+    visibility: visible;
+    opacity: 1;
+  }
+  
+  .popup {
+    margin: 70px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    width: 30%;
+    position: relative;
+    transition: all 5s ease-in-out;
+  }
+  
+  .popup h2 {
+    margin-top: 0;
+    color: #333;
+    font-family: Tahoma, Arial, sans-serif;
+  }
+  .popup .close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    transition: all 200ms;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+  }
+  .popup .close:hover {
+    color: #06D85F;
+  }
+  .popup .content {
+    max-height: 30%;
+    overflow: auto;
+  }
+  
+  @media screen and (max-width: 700px){
+  
+    .popup{
+      width: 70%;
+    }
+  }

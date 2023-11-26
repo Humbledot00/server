@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="core.png" type="image/icon type">
+    <title>Neurites</title>
+    <link rel="stylesheet" href="registerstyle.css">
+    <style>
+        .button{
+            background-color:rgba(255, 106, 200, 0.89);
+            border-radius: 6px;
+            width: 100px;
+            height: 30px;
+            color: rgba(17, 24, 39, 1);
+            margin: -260px 0% 0 50%;
+            position: absolute;
+        }
+
+        @media (max-width: 600px) {
+            .button{
+            margin: -380px -8% 0px 65%;
+        }
+        }   
+    </style>
+</head>
+
+<body>
+    <a href="/index.html"><button class="button"><b>HOME</b></button></a>
+    <div class="form-container">
+        <p class="title">Membership </p>
+        <form class="form" action="/sign_up" method="POST">
+            <div class="input-group">
+                <label for="username">Name</label>
+                <input type="text" name="name" id="name" placeholder="Name" required>
+            </div>
+            <div class="input-group">
+                <label for="username">USN</label>
+                <input type="text" name="usn" id="usn" placeholder="University Seat Number" required>
+            </div>
+            <div class="input-group">
+                <label for="username">Email</label>
+                <input type="email" name="email" id="email" placeholder="Email" required>
+            </div>
+            <div class="dropdown">
+                <div class="input-group">
+                    <label for="year">Year:</label>
+                    <select id="year" name="year" width="15px">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="department">Department:</label>
+                    <select id="department" name="department" >
+                        <option value="Computer Science">Computer Science</option>
+                        <option value="CD">CD</option>
+                        <option value="AI">AI</option>
+                        <option value="EC">EC</option>
+                    </select><br>
+                </div>
+            </div>
+            <div class="input-group">
+                <label for="username">Area of interest</label>
+                <input type="text" name="areaofinterest" id="areaofinterest" placeholder="Area of Interest" required>
+            </div>
+            <button class="sign">Register</button>
+        </form>
+    </div>
+</body>
+<script src="app.js"></script>
+
+</html>

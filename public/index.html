@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	<meta charset="UTF-8">
+    <meta name="description" content="Project IDX is an entirely web-based workspace for full-stack application development, complete with the latest generative AI (powered by Codey and PaLM 2), and full-fidelity app previews, powered by cloud emulators.">
+    <meta name="viewport" content="width=device-width">
+    <meta name="generator" content="Astro v2.9.6">
+    <link rel="icon" href="core.png" type="image/icon type">
+    <link href="index.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap" rel="stylesheet">
+
+
+    <title>Neurites</title>
+    <style>
+         @media (max-width: 600px) {
+        .button {
+            padding: 8px 12px; /* Adjust the button padding for smaller screens */
+            font-size: 12px; /* Adjust the button font size for smaller screens */
+        }
+    }
+  </style>
+	</head>
+
+    <body>
+        <div class="topglow"></div>
+        <div class="sidebar">
+            <div class="logo">
+                <img src="core.png" class="feature-icon" alt="abstract icon depicting code lines">
+            </div>
+            <nav id="sidebar-content">
+                <!-- Your sidebar content goes here -->
+            </nav>
+        </div> 
+        <div class="title">
+            <h3>Neurites</h3>
+        </div>
+
+        <div class="container" >
+            <!-- Features -->
+            <a href="index.html"><button class="button button-outline w-full xs:w-auto glow-on-hover">
+                Explore CORE
+            </button></a>
+
+            <a href="team.html"><button class="button button-outline w-full xs:w-auto glow-on-hover">
+                Team
+            </button></a>
+
+            <a href="events.html"><button class="button button-outline w-full xs:w-auto glow-on-hover">
+                Events
+            </button></a>
+        
+        
+            <!-- Waitlist -->
+            <a href="register.html"><button class="button button-primary xs:has-arrow w-full xs:w-auto">
+                Join US
+            </button></a>
+
+            
+        </div>
+        <div class="logo-container">
+            <div class="corelogo column">
+                <img src="neurite.png" alt="club logo">
+            </div>
+
+            <div class="about column">
+                <h1>CoRE</h1>
+                <h2>Center of Research Excellency at VCET</h2>
+                <p>CoRE up-skills students by providing them real work experience and healthy, competitive environment for growth. This also provides the institute with a community of skilled individual who can be the technical front of the institution.</p>
+            </div>
+        </div>
+        
+
+        <div class="event" id="event">
+            <div class="event-container">
+              <div class="event-image" id="event-image"></div>
+              <div class="event-content" id="eventContent">
+                <!-- Dynamic event details will be inserted here -->
+              </div>
+            </div>
+        </div>
+        
+
+
+        <div class="feature-container box">
+            <div class="feature-card imgcard">
+                
+                <h2 class="feature-title">
+                    EVENTS                </h2>
+                
+                <p class="feature-description">
+                    Enabling growth and exposure to real world.                 </p>
+                
+                <div class="feature-actions">
+                   <a href="events.html"> <button class="feature-button" data-join-waitlist>
+                        View Events
+                    </button></a>
+                </div>
+            </div>
+            <div class="feature-card sideimg">
+                <img src="artbreeder-image (6).png" class="feature-icon" alt="abstract icon depicting code lines">
+    
+            </div>
+        </div>
+        
+        <div class="footer">
+            <h1>
+                About</h1>
+            <p> Vivekananda College of Engineering and Technology has successfully trained and guided multiple students towards excellency. For the growth of students who are young aspiring researchers and engineers, a healthy, competitive environment is necessary which was observed to be missing in the institute. Thus the CoRE was founded.</p><br>
+            <h2>CoRE has the following aims</h2>
+            <ul>
+                <li>Provision of healthy, competitive environment for growth of young researchers and engineers.</li><br>
+                <li>Moulding students into “True Engineers”.</li><br>
+                <li>Development of technical, communication, and documentation skills.</li>
+            </ul>
+
+        </div>
+        <script src="https://unpkg.com/@webcomponents/webcomponentsjs@2.1.3/webcomponents-loader.js"></script> 
+        <model-viewer src="scene.gltf" alt="A 3D model of a car" shadow-intensity="1" auto-rotate >
+        </model-viewer>
+        
+        <script type="module"
+		  src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js">
+	  </script>
+
+	<!-- Loads <model-viewer> for old browsers like IE11: -->
+	<script nomodule
+      src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js">
+	</script>
+     <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+          try {
+            const response = await fetch('http://localhost:3000/event');
+            if (!response.ok) {
+              throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            const eventData = await response.json();
+
+            if (eventData.setDisplay == 1) {
+                const event = document.getElementById('event');
+                event.style.display = "flex";
+            }
+
+            if (eventData) {
+              const eventContent = document.getElementById('eventContent');
+              const eventimage = document.getElementById('event-image');
+
+              eventContent.innerHTML = `
+                <h2>${eventData.title}</h2>
+                <p>Date: ${eventData.date}</p>
+                <p>Location: ${eventData.location}</p>
+                <p>Description: ${eventData.description}</p>
+                <div class="button-container">
+                  <button class="eventButton">Register</button>
+                  <button class="eventButton">Learn More</button>
+                </div>
+              `;
+
+              eventimage.innerHTML = `
+                <img src="${eventData.img}">
+                `;
+            } else {
+              console.error('Event data is null or undefined.');
+            }
+          } catch (error) {
+            console.error('Error fetching event data', error);
+          }
+        });
+      </script>
+    </body>
+</html>
