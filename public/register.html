@@ -10,13 +10,20 @@
     <link rel="stylesheet" href="registerstyle.css">
     <style>
         .button{
-            background-color:rgba(255, 106, 200, 0.89);
-            border-radius: 6px;
+            border-radius: 25px; /* Adjust the border-radius as needed */
+            background-color: #007BFF; /* Change the background color */
+            color: #fff; /* Change the text color to white */
+            transition: background-color 0.5s;
+            border: 2px solid #007BFF;
             width: 100px;
-            height: 30px;
-            color: rgba(17, 24, 39, 1);
+            height: 40px;
             margin: -260px 0% 0 50%;
             position: absolute;
+        }
+        .button:hover {
+            background-color: #fff; /* Change the background color to white on hover */
+            color: #007BFF; /* Change the text color back to blue on hover */
+            border-color: #fff; /* Change the border color to white on hover */
         }
 
         @media (max-width: 600px) {
