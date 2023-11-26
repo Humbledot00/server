@@ -11,6 +11,12 @@ body {
     height: 100vh;
 }
 
+::placeholder{
+    --tw-text-opacity: 1;
+    color: rgb(128 140 156 / var(--tw-text-opacity));
+}
+
+
 .form-container {
     width: 320px;
     border-radius: 0.75rem;
@@ -53,6 +59,7 @@ body {
     line-height: 1.25rem;
 }
 
+
 .input-group label {
     display: block;
     margin-bottom: 4px;
@@ -66,8 +73,9 @@ body {
     border: 1px solid rgba(55, 65, 81, 1);
     outline: 0;
     --tw-text-opacity: 1;
-    color: rgb(128 140 156 / var(--tw-text-opacity));  
-    padding: 0.75rem;    padding: 0.75rem;
+    color: rgb(128 140 156 / var(--tw-text-opacity));
+    background-color: rgba(17, 24, 39, 1);
+    padding: 0.75rem;
     font-family: 'Courier Prime', monospace;
 
 }
