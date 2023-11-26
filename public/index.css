@@ -129,6 +129,7 @@ body{
 .logo {
     padding: 20px; /* Adjust the padding as needed */
     text-align: center;
+    margin-top: 35px;
 }
 
 /* Style for the sidebar content */
