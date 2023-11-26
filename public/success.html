@@ -138,116 +138,29 @@ img{
 }
 
 
-.btn-23,
-.btn-23 *,
-.btn-23 :after,
-.btn-23 :before,
-.btn-23:after,
-.btn-23:before {
-  border: 0 solid;
-  box-sizing: border-box;
-}
-
-.btn-23 {
-  -webkit-tap-highlight-color: transparent;
-  -webkit-appearance: button;
-  background-color: #000;
-  background-image: none;
-  color: #fff;
-  cursor: pointer;
-  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
-    Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif,
-    Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
-  font-size: 90%;
-  font-weight: 600;
-  line-height: 1;
-  margin: 0;
-  -webkit-mask-image: -webkit-radial-gradient(#000, #fff);
-  padding: 0;
-  text-transform: uppercase;
-}
-
-.btn-23:disabled {
-  cursor: default;
-}
-
-.btn-23:-moz-focusring {
-  outline: auto;
-}
-
-.btn-23 svg {
-  display: block;
-  vertical-align: middle;
-}
-
-.btn-23 [hidden] {
-  display: none;
-}
-
-.btn-23 {
-  border-radius: 99rem;
-  border-width: 2px;
-  overflow: hidden;
-  padding: 0.8rem 3rem;
-  position: relative;
-}
-
-.btn-23 span {
-  display: grid;
-  inset: 0;
-  place-items: center;
-  position: absolute;
-  transition: opacity 0.2s ease;
-}
-
-.btn-23 .marquee {
-  --spacing: 5em;
-  --start: 0em;
-  --end: 5em;
-  -webkit-animation: marquee 1s linear infinite;
-  animation: marquee 1s linear infinite;
-  -webkit-animation-play-state: paused;
-  animation-play-state: paused;
-  opacity: 0;
-  position: relative;
-  text-shadow: #fff var(--spacing) 0, #fff calc(var(--spacing) * -1) 0,
-    #fff calc(var(--spacing) * -2) 0;
-}
-
-.btn-23:hover .marquee {
-  -webkit-animation-play-state: running;
-  animation-play-state: running;
-  opacity: 1;
-}
-
-.btn-23:hover .text {
-  opacity: 0;
-}
-
-@-webkit-keyframes marquee {
-  0% {
-    transform: translateX(var(--start));
-  }
-
-  to {
-    transform: translateX(var(--end));
-  }
-}
-
-@keyframes marquee {
-  0% {
-    transform: translateX(var(--start));
-  }
-
-  to {
-    transform: translateX(var(--end));
-  }
-}
-
 .button{
-  margin: 30px;
+  border-radius: 25px; /* Adjust the border-radius as needed */
+  background-color: #007BFF; /* Change the background color */
+  color: #fff; /* Change the text color to white */
+  transition: background-color 0.5s;
+  border: 2px solid #007BFF;
+  width: 150px;
+  height: 40px;
+  margin: 0px 0 0 3%;
+  position: absolute;
+}
+.button:hover {
+    background-color: #fff; /* Change the background color to white on hover */
+    color: #007BFF; /* Change the text color back to blue on hover */
+    border-color: #fff; /* Change the border color to white on hover */
 }
 
+@media screen and (max-width:768px){
+  .button{
+  margin: -62px 0 0 15%;
+}
+}
+  
 
 
 
@@ -255,9 +168,8 @@ img{
 </head>
 <body>
   
-  <a href="/index.html"><button class="btn-23 button">
+  <a href="/index.html"><button class="button">
     <span class="text">Back To Home</span>
-    <span aria-hidden="" class="marquee">Home</span>
   </button></a>
   <div class="container" id="container">
     <div class="card">
