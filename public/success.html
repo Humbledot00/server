@@ -146,8 +146,10 @@ img{
   border: 2px solid #007BFF;
   width: 150px;
   height: 40px;
-  margin: 0px 0 0 3%;
+  text-align: center;
   position: absolute;
+  margin-left: -70px;
+  margin-top: 40%;
 }
 .button:hover {
     background-color: #fff; /* Change the background color to white on hover */
@@ -155,9 +157,14 @@ img{
     border-color: #fff; /* Change the border color to white on hover */
 }
 
+.homeButton{
+  display: flex;
+  justify-content: center
+}
+
 @media screen and (max-width:768px){
   .button{
-  margin: -62px 0 0 15%;
+    margin-top: 130%;
 }
 }
   
@@ -167,10 +174,10 @@ img{
   </style>
 </head>
 <body>
-  
+  <div class="homeButton">
   <a href="/index.html"><button class="button">
     <span class="text">Back To Home</span>
-  </button></a>
+  </button></a></div>
   <div class="container" id="container">
     <div class="card">
       <div class="card-img"><img src="core.png"/></div>
