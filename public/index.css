@@ -291,7 +291,7 @@ body{
 /* Style the feature button */
 .feature-button {
     padding: 10px 20px;
-    background-color: #5e2beb;
+    background-color: #007BFF;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -300,7 +300,8 @@ body{
 
 /* Add hover effect to the button */
 .feature-button:hover {
-    background-color: #4c1a9b;
+    background-color: #fff;
+    color: #007BFF;
 }
 
 .footer{
