@@ -52,7 +52,7 @@ margin-top: -250px;
 
   .eventButton {
     padding: 10px 15px;
-    background-color: #5e2beb;
+    background-color: #007BFF;
     color: white;
     border: none;
     border-radius: 5px;
@@ -61,7 +61,8 @@ margin-top: -250px;
   }
 
   .eventButton:hover {
-    background-color: #4c1a9b;
+    background-color: white;
+    color: #007BFF;
 }
 
   /* Media Query for smaller screens */
